@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillsets</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 p-8">
+    <h1 class="mt-5 mb-5 sm:text-2xl md:3xl font-semibold">Programming Languages Roadmap</h1>
+    <div id="skillsets" class="container mx-auto"></div>
+
+    <script>
+  const skillsets = {
+javascript: {
+      language: "JavaScript",
+      skills: {
+        "Core Concepts": [
+          "ES6+ Features",
+          "Closures & Scope",
+          "Promises & Async/Await",
+          "Prototypes & Classes",
+          "Event Loop",
+          "DOM Manipulation",
+          "Error Handling",
+          "Memory Management"
+        ],
+        "Frontend": [
+          "React/Vue/Angular",
+          "TypeScript",
+          "Webpack/Vite",
+          "Jest/Mocha Testing",
+          "Browser APIs",
+          "PWA Development",
+          "State Management",
+          "Web Components"
+        ],
+        "Backend": [
+          "Node.js",
+          "Express/Nest.js",
+          "RESTful APIs",
+          "GraphQL",
+          "WebSocket",
+          "MongoDB/PostgreSQL",
+          "Authentication/JWT",
+          "Microservices"
+        ]
+      }
+    },
+
+    typescript: {
+      language: "TypeScript",
+      skills: {
+        "Core Concepts": [
+          "Type System",
+          "Interfaces & Types",
+          "Generics",
+          "Decorators",
+          "Enums",
+          "Type Guards",
+          "Utility Types",
+          "Module System"
+        ],
+        "Frontend Development": [
+          "React/Angular/Vue",
+          "State Management",
+          "Component Patterns",
+          "Testing (Jest/Cypress)",
+          "Build Tools",
+          "Performance",
+          "Accessibility",
+          "Design Systems"
+        ],
+        "Backend Development": [
+          "Node.js",
+          "Nest.js",
+          "Express with Types",
+          "TypeORM/Prisma",
+          "GraphQL",
+          "API Design",
+          "Security",
+          "Microservices"
+        ]
+      }
+    },
+    java: {
+      language: "Java",
+      skills: {
+        "Core Concepts": [
+          "OOP Principles",
+          "Collections Framework",
+          "Multithreading",
+          "Memory Management",
+          "Exception Handling",
+          "Generics",
+          "Stream API",
+          "Lambda Expressions"
+        ],
+        "Frameworks": [
+          "Spring Boot",
+          "Spring MVC",
+          "Hibernate/JPA",
+          "JUnit/Mockito",
+          "Maven/Gradle",
+          "Apache Kafka",
+          "JavaFX",
+          "Microservices"
+        ],
+        "Enterprise": [
+          "Design Patterns",
+          "Enterprise Integration",
+          "Application Servers",
+          "Web Services",
+          "Security (Spring Security)",
+          "Logging Frameworks",
+          "Caching Solutions",
+          "CI/CD"
+        ]
+      }
+    },
+    go: {
+      language: "Go",
+      skills: {
+        "Core Concepts": [
+          "Goroutines",
+          "Channels",
+          "Interfaces",
+          "Error Handling",
+          "Memory Management",
+          "Type System",
+          "Packages",
+          "Testing"
+        ],
+        "Backend Development": [
+          "Gin/Echo Frameworks",
+          "gRPC",
+          "RESTful APIs",
+          "Database Integration",
+          "Microservices",
+          "Docker Integration",
+          "Authentication",
+          "Monitoring"
+        ],
+        "Tools & Practices": [
+          "Go Modules",
+          "Profiling",
+          "Debugging",
+          "Code Generation",
+          "CI/CD Pipeline",
+          "Performance Optimization",
+          "Security Best Practices",
+          "Cloud Deployment"
+        ]
+      }
+    },
+    php: {
+      language: "PHP",
+      skills: {
+        "Core Concepts": [
+          "OOP in PHP",
+          "Namespaces",
+          "Traits",
+          "Dependency Injection",
+          "Error Handling",
+          "Sessions/Cookies",
+          "Security Practices",
+          "Package Management"
+        ],
+        "Frameworks": [
+          "Laravel",
+          "Symfony",
+          "CodeIgniter",
+          "Unit Testing (PHPUnit)",
+          "Composer",
+          "MVC Pattern",
+          "API Development",
+          "Template Engines"
+        ],
+        "Web Development": [
+          "Database Integration",
+          "Caching",
+          "Authentication",
+          "File Handling",
+          "RESTful Services",
+          "CMS Development",
+          "E-commerce Solutions",
+          "Performance Optimization"
+        ]
+      }
+    },
+    python: {
+      language: "Python",
+      skills: {
+        "Core Concepts": [
+          "Data Structures",
+          "Generators & Iterators",
+          "Decorators",
+          "Context Managers",
+          "OOP Principles",
+          "Exception Handling",
+          "Memory Management",
+          "Virtual Environments"
+        ],
+        "Web Development": [
+          "Django/Flask",
+          "FastAPI",
+          "REST Framework",
+          "Template Engines",
+          "ORM (SQLAlchemy)",
+          "Authentication",
+          "API Development",
+          "Websockets"
+        ],
+        "Data & ML": [
+          "NumPy/Pandas",
+          "Data Analysis",
+          "Machine Learning",
+          "Data Visualization",
+          "Scikit-learn",
+          "TensorFlow/PyTorch",
+          "Jupyter Notebooks",
+          "Big Data Tools"
+        ]
+      }
+    },
+    ruby: {
+      language: "Ruby",
+      skills: {
+        "Core Concepts": [
+          "Object-Oriented Ruby",
+          "Blocks & Procs",
+          "Metaprogramming",
+          "Modules & Mixins",
+          "Garbage Collection",
+          "Error Handling",
+          "Threading",
+          "Testing (RSpec)"
+        ],
+        "Web Development": [
+          "Ruby on Rails",
+          "Sinatra",
+          "Active Record",
+          "Asset Pipeline",
+          "Action Cable",
+          "API Development",
+          "Authentication",
+          "Background Jobs"
+        ],
+        "Tools & Practices": [
+          "RubyGems",
+          "Bundler",
+          "DevOps",
+          "TDD/BDD",
+          "Code Quality Tools",
+          "Performance Optimization",
+          "Security Best Practices",
+          "Deployment"
+        ]
+      }
+    },
+
+    rust: {
+      language: "Rust",
+      skills: {
+        "Core Concepts": [
+          "Ownership & Borrowing",
+          "Lifetimes",
+          "Traits & Generics",
+          "Error Handling",
+          "Pattern Matching",
+          "Unsafe Rust",
+          "Macros",
+          "Concurrency Model"
+        ],
+        "Systems Programming": [
+          "Memory Management",
+          "FFI (Foreign Function Interface)",
+          "Low-level Programming",
+          "Embedded Systems",
+          "OS Development",
+          "Device Drivers",
+          "Performance Optimization",
+          "Cross-compilation"
+        ],
+        "Tools & Frameworks": [
+          "Cargo Package Manager",
+          "Tokio (Async Runtime)",
+          "Actix/Rocket (Web)",
+          "Serde (Serialization)",
+          "Testing Framework",
+          "WASM Integration",
+          "CLI Development",
+          "Database Drivers"
+        ]
+      }
+    },
+    kotlin: {
+      language: "Kotlin",
+      skills: {
+        "Core Concepts": [
+          "Null Safety",
+          "Coroutines",
+          "Extension Functions",
+          "Data Classes",
+          "Smart Casts",
+          "Property Delegation",
+          "Type System",
+          "Functional Programming"
+        ],
+        "Android Development": [
+          "Android SDK",
+          "Jetpack Compose",
+          "MVVM Architecture",
+          "Room Database",
+          "Navigation Component",
+          "WorkManager",
+          "LiveData/Flow",
+          "Material Design"
+        ],
+        "Backend Development": [
+          "Spring Boot",
+          "Ktor Framework",
+          "Exposed ORM",
+          "Microservices",
+          "Testing (JUnit/Mockk)",
+          "Gradle Build System",
+          "API Development",
+          "Database Integration"
+        ]
+      }
+    },
+    swift: {
+      language: "Swift",
+      skills: {
+        "Core Concepts": [
+          "Optionals",
+          "Protocol-Oriented Programming",
+          "Memory Management (ARC)",
+          "Generics",
+          "Error Handling",
+          "Extensions",
+          "Property Observers",
+          "Concurrency"
+        ],
+        "iOS Development": [
+          "UIKit/SwiftUI",
+          "Core Data",
+          "Auto Layout",
+          "App Lifecycle",
+          "Networking",
+          "Push Notifications",
+          "Core Animation",
+          "App Store Guidelines"
+        ],
+        "Tools & Practices": [
+          "Xcode",
+          "CocoaPods/SPM",
+          "Testing (XCTest)",
+          "CI/CD for iOS",
+          "Instruments",
+          "Design Patterns",
+          "Code Signing",
+          "App Security"
+        ]
+      }
+    },
+    csharp: {
+      language: "C#",
+      skills: {
+        "Core Concepts": [
+          "LINQ",
+          "Async/Await",
+          "Delegates & Events",
+          "Generics",
+          "Collections",
+          "Attributes",
+          "Extension Methods",
+          "Memory Management"
+        ],
+        ".NET Development": [
+          ".NET Core/.NET 5+",
+          "ASP.NET Core",
+          "Entity Framework",
+          "Dependency Injection",
+          "Middleware",
+          "Identity Framework",
+          "SignalR",
+          "Blazor"
+        ],
+        "Enterprise": [
+          "Design Patterns",
+          "Microservices",
+          "Azure Integration",
+          "Testing (MSTest/xUnit)",
+          "Logging & Monitoring",
+          "Security",
+          "Performance Tuning",
+          "DevOps"
+        ]
+      }
+    },
+    scala: {
+      language: "Scala",
+      skills: {
+        "Core Concepts": [
+          "Functional Programming",
+          "Pattern Matching",
+          "Type System",
+          "Implicits",
+          "Futures & Promises",
+          "Collections API",
+          "Case Classes",
+          "Trait Composition"
+        ],
+        "Frameworks & Libraries": [
+          "Akka",
+          "Play Framework",
+          "Cats/Cats Effect",
+          "ZIO",
+          "Spark",
+          "ScalaTest/Specs2",
+          "Http4s",
+          "Slick/Doobie"
+        ],
+        "Big Data & Cloud": [
+          "Apache Spark",
+          "Data Processing",
+          "Stream Processing",
+          "Microservices",
+          "Cloud Deployment",
+          "Concurrent Programming",
+          "Performance Optimization",
+          "Monitoring & Logging"
+        ]
+      }
+    }
+  };
+
+
+        const skillsetsContainer = document.getElementById('skillsets');
+
+        Object.keys(skillsets).forEach(key => {
+            const language = skillsets[key];
+            const languageSection = document.createElement('div');
+            languageSection.className = 'mb-8 bg-white shadow-lg rounded-lg overflow-hidden';
+
+            const languageHeader = document.createElement('div');
+            languageHeader.className = 'flex items-center justify-between p-4 bg-yellow-200 border-red-500 cursor-pointer';
+            languageHeader.innerHTML = `
+                <h2 class="text-lg font-semibold">${language.language}</h2>
+                <i class="fas fa-chevron-down"></i>
+            `;
+
+            const skillsSection = document.createElement('div');
+            skillsSection.className = 'p-4 hidden';
+
+            Object.keys(language.skills).forEach(category => {
+                const categorySection = document.createElement('div');
+                categorySection.className = 'mb-4';
+
+                const categoryHeader = document.createElement('h3');
+                categoryHeader.className = 'text-xl font-semibold mb-2';
+                categoryHeader.textContent = category;
+
+                const skillsList = document.createElement('ul');
+                skillsList.className = 'list-disc list-inside';
+
+                language.skills[category].forEach(skill => {
+                    const skillItem = document.createElement('li');
+                    skillItem.textContent = skill;
+                    skillsList.appendChild(skillItem);
+                });
+
+                categorySection.appendChild(categoryHeader);
+                categorySection.appendChild(skillsList);
+                skillsSection.appendChild(categorySection);
+            });
+
+            languageHeader.addEventListener('click', () => {
+                skillsSection.classList.toggle('hidden');
+                languageHeader.querySelector('i').classList.toggle('fa-chevron-down');
+                languageHeader.querySelector('i').classList.toggle('fa-chevron-up');
+            });
+
+            languageSection.appendChild(languageHeader);
+            languageSection.appendChild(skillsSection);
+            skillsetsContainer.appendChild(languageSection);
+        });
+    </script>
+</body>
+</html>
